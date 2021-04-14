@@ -1,8 +1,7 @@
 import * as ActionTypes from './ActionTypes';
-import { baseUrl } from '../shared/baseUrl';
-
+import { baseURL } from '../shared/baseURL';
 export const fetchComments = () => dispatch => {
-    return fetch(baseUrl + 'comments')
+    return fetch(baseURL + 'comments')
         .then(response => {
                 if (response.ok) {
                     return response;
@@ -35,7 +34,7 @@ export const fetchCampsites = () => dispatch => {
 
     dispatch(campsitesLoading());
 
-    return fetch(baseUrl + 'campsites')
+    return fetch(baseURL + 'campsites')
         .then(response => {
                 if (response.ok) {
                     return response;
@@ -72,7 +71,7 @@ export const fetchPromotions = () => dispatch => {
     
     dispatch(promotionsLoading());
 
-    return fetch(baseUrl + 'promotions')
+    return fetch(baseURL + 'promotions')
         .then(response => {
                 if (response.ok) {
                     return response;
@@ -109,7 +108,7 @@ export const fetchPartners = () => dispatch => {
     
     dispatch(partnersLoading());
 
-    return fetch(baseUrl + 'partners')
+    return fetch(baseURL + 'partners')
         .then(response => {
                 if (response.ok) {
                     return response;
