@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 import { Tile } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseURL } from '../shared/baseURL';
+import Loading from './LoadingComponent';
+
 const mapStateToProps = state => {
     return {
         campsites: state.campsites,
@@ -29,6 +31,16 @@ class Directory extends Component {
             );
         };
 
+        if (this.props.campsites.isLoading) {
+            return <Loading />;
+        }
+        if (this.props.campsites.errMess) {
+            return (
+                <View>
+                    <Text>{props.campsites.errMess}</Text>
+                </View>
+            );
+        }
         return (
             <FlatList
                 data={this.props.campsites.campsites}
