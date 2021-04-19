@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, Animated } from 'react-native';
 import { Card } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseURL } from '../shared/baseURL';
 import Loading from './LoadingComponent';
-import { View, Text, Animated } from 'react-native';
 
 const mapStateToProps = state => {
     return {
